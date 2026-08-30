@@ -8,6 +8,7 @@ const connection = new Redis(process.env.REDIS_URL, {
     maxRetriesPerRequest: null,
 });
 
+// queue worker
 const worker = new Worker("emailQueue", async (job) => {
     console.log('Job started');
 

@@ -20,9 +20,7 @@ router.get("/all", rateLimitter, async (req, res) => {
     try {
         const users = await Usermodel.find();
         res.status(200).json(users);
-
     } catch (error) {
-
     }
 });
 export default router;
@@ -40,7 +38,6 @@ router.get("/all-redis", rateLimitter, async (req, res) => {
         await redis.set("users:all", JSON.stringify(users));
         res.status(200).json(users);
     } catch (error) {
-
     }
 });
 
